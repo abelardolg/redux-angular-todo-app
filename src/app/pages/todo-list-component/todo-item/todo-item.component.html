@@ -1,0 +1,12 @@
+<li [class.completed]="todo.completado" [class.editing]="editMode">
+    <div class="view">
+
+        <input class="toggle" type="checkbox" [formControl]="checkBoxIsCompleted">
+
+        <label (dblclick)="modoEdicion()">{{ todo.texto }}</label>
+
+        <button (click)="delete()" class="destroy"></button>
+
+    </div>
+    <input class="edit" [formControl]="inputEditText" (blur)="updateTodo()" type="text" #inputEdit>
+</li>
